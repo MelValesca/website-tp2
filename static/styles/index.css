@@ -1,0 +1,280 @@
+* {
+  box-sizing: border-box;
+}
+
+p.accueil {
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: 300;
+  width: 60%;
+  font-size: 1.2rem;
+  margin: 25px auto;
+}
+
+.navigation {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0 20rem;
+}
+
+.navigation .lien {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 13rem;
+  height: 4rem;
+  background-color: rgb(220, 222, 147);
+  color: #136a18;
+  font-weight: bold;
+  border-radius: 3px;
+  border: 1px solid #0b4521;
+}
+
+.ranger-control {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 2rem;
+}
+
+.erreur {
+  padding-left: 10px;
+  color: red;
+  font-size: 0.9rem;
+  margin-bottom: 0.8rem;
+}
+
+.form-abandon {
+  width: 50%;
+  padding: 20px;
+  border: 3px solid #1f8947;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: rgb(255, 255, 249);
+  border-radius: 15px;
+}
+
+.ranger {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.control img {
+  width: 40%;
+  height: 40%;
+}
+
+.form-abandon input {
+  width: 100%;
+}
+
+label {
+  margin-right: 1rem;
+  font-weight: bold;
+}
+
+.control {
+  justify-content: space-around;
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  width: 100%;
+}
+
+body .contenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.navigation .lien:hover {
+  font-size: 1.1rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border: 2px solid #0b4521;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: rgb(252, 251, 224);
+}
+
+h1,
+h2,
+h3 {
+  font-size: 81px;
+  font-weight: 600;
+  margin: 0px;
+  background-image: conic-gradient(
+    #3c769a 0%,
+    #2d6080 27%,
+    #0b4521 25%,
+    #0b4521 73%,
+    #136a18 73%,
+    #136a18 99%
+  );
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.form-abandon button,
+.carte-personnel button {
+  background-image: conic-gradient(
+    #3c769a 0%,
+    #2d6080 27%,
+    #0b4521 25%,
+    #0b4521 73%,
+    #136a18 73%,
+    #136a18 99%
+  );
+  width: 9rem;
+  height: 2.5rem;
+  color: white;
+  border-radius: 13px;
+  box-shadow: 0 0 10px 0 rgba(237, 237, 237, 0.45) inset;
+  cursor: pointer;
+}
+
+.form-abandon button:hover,
+.carte-personnel button:hover {
+  color: rgb(127, 177, 177);
+}
+
+.contenu h1 {
+  margin-top: 3rem;
+  font-size: 60px;
+}
+.contenu h3 {
+  font-size: 20px;
+}
+
+header div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 35%;
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+header div span {
+  color: #0b4521;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.animaux-liste {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin-bottom: 2rem;
+}
+
+.animaux-liste .carte {
+  width: 13rem;
+  height: 13rem;
+  border: 3px dotted #74b13f;
+  outline-offset: 2px;
+  outline: 3px solid #3c769a;
+  border-radius: 0 0 20px 20px;
+  padding: 10px;
+  background-color: rgb(255, 255, 249);
+  background-image: url("https://media.discordapp.net/attachments/923402712274599946/1093942092260196542/image0.jpg");
+  background-position: right bottom;
+  background-size: 45px 45px;
+  background-repeat: no-repeat;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.carte-personnel {
+  width: 60%;
+  border: 3px dotted #74b13f;
+  outline-offset: 2px;
+  outline: 3px solid #3c769a;
+  border-radius: 0 0 20px 20px;
+  padding: 10px;
+  background-color: rgb(255, 255, 249);
+  background-image: url("https://media.discordapp.net/attachments/923402712274599946/1093942092260196542/image0.jpg");
+  background-position: right bottom;
+  background-size: 45px 45px;
+  background-repeat: no-repeat;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.formulaire {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  border: 2px solid #0b4521;
+  width: 38rem;
+  height: 7rem;
+  margin: 20px;
+}
+
+button {
+  border: 1px solid #0b4521;
+  background-color: rgb(220, 222, 147);
+  font-weight: bold;
+  width: 5rem;
+  height: 1.3rem;
+  margin-left: 0.5rem;
+}
+
+button:hover {
+  box-shadow: inset rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  color: #285a78;
+  cursor: pointer;
+}
+
+p span {
+  font-weight: bold;
+}
+
+header {
+  background-image: url("https://www.ville.magog.qc.ca/wp-content/uploads/2019/01/Magog-chien-SPA.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0% 30%;
+  height: 400px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 0 20px 20px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+footer div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+footer {
+  background-color: rgb(220, 222, 147);
+  width: 100%;
+  height: 10vh;
+  position: relative;
+  bottom: 0;
+  margin-top: 5rem;
+}

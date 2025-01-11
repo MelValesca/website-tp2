@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block css %}
+<link href="{{ url_for('static', filename='styles/index.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="contenu">
+    <h1>{{nombre}} Resultat(s) pour '{{mot}}'</h1>
+    <div class="animaux-liste">
+        {% for animal in animals %}
+        <div class="carte">
+
+            <p><span>Nom :</span> {{animal["nom"]}}</p>
+            <p><span>Espece:</span> {{animal["espece"]}}</p>
+            <p><span>Race :</span> {{animal["race"]}}</p>
+            <p><span>Age :</span> {{animal["age"]}}</p>
+
+            {% set variable=animal["id"] %}
+            <form method="GET" action="{{ url_for('animal' , animal_id = variable) }}">
+                <button type="submit" name="identifiant" value={{variable}} class="link-button">
+                    Consulter
+                </button>
+            </form>
+
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

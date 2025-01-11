@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/index.css') }}">
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <title>Gros Toutou et Cie.</title>
+    <link rel="icon" type="image/jpg"
+        href="https://media.discordapp.net/attachments/923402712274599946/1093942092260196542/image0.jpg">
+    <meta charset="utf-8">
+</head>
+
+<body>
+
+    <header>
+        <div>
+            <h2>Gros Toutou et Cie.</h2>
+            <span>Adoptons, quand nous le pouvons.</span>
+        </div>
+    </header>
+    {% include 'navigation.html' %}
+
+    {% block content %}{% endblock %}
+
+    <footer>
+        <div><span>Gros Toutou et Cie. 2023 Tous Droits Réservés</span></div>
+    </footer>
+</body>
+
+</html>

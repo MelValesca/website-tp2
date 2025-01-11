@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+
+{% block css %}
+<link href="{{ url_for('static', filename='styles/index.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="contenu">
+    <h1>{{title}}</h1>
+
+    <p class="accueil">{{description}}</p>
+    <div class="animaux-liste">
+        {% for animal in animals %}
+        <div class="carte">
+
+            <p><span>Nom :</span> {{animal["nom"]}}</p>
+            <p><span>Espece:</span> {{animal["espece"]}}</p>
+            <p><span>Race :</span> {{animal["race"]}}</p>
+            <p><span>Age :</span> {{animal["age"]}}</p>
+
+            {% set variable=animal["id"] %}
+            <form method="GET" action="{{ url_for('animal' , animal_id = variable) }}">
+                <button type="submit" name="identifiant" value={{variable}} class="link-button">
+                    Consulter
+                </button>
+            </form>
+
+        </div>
+        {% endfor %}
+    </div>
+    <p class="accueil">Bienvenue sur le site de Gros Toutou et Cie, votre référence en matière d'adoption d'animaux de
+        compagnie ! Ici, nous sommes passionnés par les animaux et notre mission est de leur offrir un foyer chaleureux
+        et aimant. Nous nous engageons à trouver des familles responsables et aimantes pour nos adorables compagnons à
+        quatre pattes.</p>
+    <p class="accueil">Gros Toutou et Cie est une organisation à but non lucratif qui collabore avec des refuges et des
+        associations locales pour sauver, soigner et reloger des animaux abandonnés ou maltraités. Notre équipe de
+        bénévoles dévoués travaille sans relâche pour assurer le bien-être de chaque animal sous notre protection, en
+        leur offrant les soins vétérinaires nécessaires, une alimentation saine et un environnement sécuritaire.</p>
+    <p class="accueil">Chez Gros Toutou et Cie, nous croyons que chaque animal mérite une seconde chance et une vie
+        remplie d'amour. Parcourez notre sélection d'animaux disponibles à l'adoption, incluant des chiens, des chats et
+        même des petits animaux comme des lapins et des cochons d'Inde. Utilisez notre outil de recherche pour trouver
+        l'animal qui correspond le mieux à votre mode de vie et à vos besoins.</p>
+    <p class="accueil">N'hésitez pas à visiter notre centre d'adoption pour rencontrer nos animaux en personne et
+        obtenir des conseils de nos experts sur le choix de votre futur compagnon. Ensemble, faisons la différence et
+        offrons à ces animaux un nouveau départ dans la vie. Merci de choisir Gros Toutou et Cie pour donner une seconde
+        chance à un animal dans le besoin.</p>
+</div>
+{% endblock %}

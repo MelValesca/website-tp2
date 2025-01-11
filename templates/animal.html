@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+
+{% block css %}
+<link href="{{ url_for('static', filename='styles/index.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="contenu">
+    <h1>{{animal["nom"]}}</h1>
+    <div class="carte-personnel">
+        <p><span>Espece:</span> {{animal["espece"]}}</p>
+        <p><span>Race :</span> {{animal["race"]}}</p>
+        <p><span>Age :</span> {{animal["age"]}}</p>
+        <p><span>Description :</span> {{animal["description"]}}</p>
+        <h3>Informations du propriétaire</h3>
+        <p><span>Courriel :</span> {{animal["courriel"]}}</p>
+        <p><span>Adresse :</span> {{animal["adresse"]}}</p>
+        <p><span>Ville :</span> {{animal["ville"]}}</p>
+        <p><span>Code Postal :</span> {{animal["cp"]}}</p>
+
+        {% set courriel=animal["courriel"] %}
+        {% set nom=animal["nom"] %}
+
+
+        <div class="control">
+            <form id="contacte" name="sentMessage" novalidate="novalidate"
+                action="{{url_for('contacter', courriel = courriel, nom = nom)}}" method="POST">
+                <button type="submit" name="contacte">Adopter</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

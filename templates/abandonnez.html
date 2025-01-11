@@ -1,0 +1,145 @@
+{% extends 'layout.html' %}
+
+{% block css %}
+<link href="{{ url_for('static', filename='styles/index.css') }}" rel="stylesheet">
+{% endblock %}
+
+
+{% block content %}
+<div class="contenu">
+    <h1>{{title}}</h1>
+    <p class="accueil">{{description}}</p>
+    <form method="POST" onsubmit="return validerFormulaire()" action="/formulaire" class="form-abandon">
+        <div class="ranger">
+            <div class="control">
+                <img src="https://media.discordapp.net/attachments/923402712274599946/1093942092260196542/image0.jpg"
+                    alt="logo">
+                <div class="ranger">
+
+                    <div class="ranger-control">
+                        <div class="control">
+                            <label for="nom">Nom&nbsp;:</label>
+                            <input id="nom" type="text" name="nom" value="{{request.form['nom']}}"
+                                placeholder="entre 3 et 20 caractères">
+                        </div>
+                        <ul class="erreur">
+                            {% for e in errors["nom"] %}
+                            <li>{{e}}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+
+                    <div class="ranger-control">
+                        <div class="control">
+                            <label for="espece">Espèce&nbsp;:</label>
+                            <input id="espece" type="text" name="espece" value="{{request.form['espece']}}"
+                                placeholder="max 25 caractères">
+                        </div>
+                        <ul class="erreur">
+                            {% for e in errors["espece"] %}
+                            <li>{{e}}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+
+                    <div class="ranger-control">
+                        <div class="control">
+                            <label for="race">Race&nbsp;:</label>
+                            <input id="race" type="text" name="race" value="{{request.form['race']}}"
+                                placeholder="max 25 caractères">
+                        </div>
+                        <ul class="erreur">
+                            {% for e in errors["race"] %}
+                            <li>{{e}}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+
+                    <div class="ranger-control">
+                        <div class="control">
+                            <label for="age">Âge&nbsp;:</label>
+                            <input id="age" type="number" name="age" value="{{request.form['age']}}"
+                                placeholder="entre 0 et 30 ans">
+                        </div>
+                        <ul class="erreur">
+                            {% for e in errors["age"] %}
+                            <li>{{e}}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+            <div class="ranger-control">
+                <div class="control">
+                    <label for="description">Description&nbsp;:</label>
+                    <input id="description" type="text" name="description" value="{{request.form['description']}}"
+                        placeholder="max 500 caractères">
+                </div>
+                <ul class="erreur">
+                    {% for e in errors["description"] %}
+                    <li>{{e}}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="ranger-control">
+                <div class="control">
+                    <label for="email">Adresse&nbsp;courriel&nbsp;:</label>
+                    <input id="email" type="text" name="email" value="{{request.form['email']}}"
+                        placeholder="max 80 caractères (ex: moncourriel@courriel.ca)">
+                </div>
+                <ul class="erreur">
+                    {% for e in errors["email"] %}
+                    <li>{{e}}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="ranger-control">
+                <div class="control">
+                    <label for="adresse">Adresse&nbsp;civique&nbsp;:</label>
+                    <input id="adresse" type="text" name="adresse" value="{{request.form['adresse']}}"
+                        placeholder="max 75 caractères">
+                </div>
+                <ul class="erreur">
+                    {% for e in errors["adresse"] %}
+                    <li>{{e}}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="ranger-control">
+                <div class="control">
+                    <label for="ville">Ville&nbsp;:</label>
+                    <input id="ville" type="text" name="ville" value="{{request.form['ville']}}"
+                        placeholder="max 75 caractères">
+                </div>
+                <ul class="erreur">
+                    {% for e in errors["ville"] %}
+                    <li>{{e}}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="ranger-control">
+                <div class="control">
+                    <label for="codepostal">Code&nbsp;postal&nbsp;:</label>
+                    <input id="codepostal" type="text" name="codepostal" value="{{request.form['codepostal']}}"
+                        placeholder="format canadien (ex: H1H 2H2)">
+                </div>
+                <ul class="erreur">
+                    {% for e in errors["codepostal"] %}
+                    <li>{{e}}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+
+            <button id="bouton" type="submit" name="bouton">
+                Soumettre
+            </button>
+        </div>
+    </form>
+</div>
+{% endblock %}

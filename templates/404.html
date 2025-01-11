@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+
+{% block css %}
+<link href="{{ url_for('static', filename='styles/index.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="contenu">
+    <h1>Erreur 404</h1>
+    <p>Vous êtes arrivé sur cette page d'une manière très mystérieuse... Êtes-vous perdu ?</p>
+</div>
+{% endblock %}
