@@ -8,8 +8,7 @@ Il a été realisé dans le cadre du cours de [Introduction à la programmation 
 
 ## Auteurs
 
-Neil Ridene (RIDN30129504)
-Melissa Vallée (VALM22549307)
+Melissa Vallée
 
 ## Utilisation
 
